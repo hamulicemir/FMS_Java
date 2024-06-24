@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="178px" preserveAspectRatio="none" style="width:192px;height:178px;" version="1.1" viewBox="0 0 192 178" width="192px" zoomAndPan="magnify"><defs><filter height="300%" id="f1vnhdake3ubey" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster FMS.provided--><polygon fill="#FFFFFF" filter="url(#f1vnhdake3ubey)" points="22,24,127,24,134,47.6094,170,47.6094,170,166,22,166,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="134" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="26" y="40.5332">FMS.provided</text><!--class FMS.provided.Aircraft--><rect fill="#FEFECE" filter="url(#f1vnhdake3ubey)" height="89.5078" id="FMS.provided.Aircraft" style="stroke: #A80036; stroke-width: 1.5;" width="116" x="38" y="60"/><ellipse cx="74.15" cy="76" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M76.9156,71.875 Q77.0719,71.6563 77.2594,71.5469 Q77.4469,71.4375 77.6656,71.4375 Q78.0406,71.4375 78.275,71.6953 Q78.5094,71.9531 78.5094,72.5625 L78.5094,74.0156 Q78.5094,74.625 78.275,74.8906 Q78.0406,75.1563 77.6656,75.1563 Q77.3219,75.1563 77.1188,74.9531 Q76.9156,74.7656 76.8063,74.25 Q76.7594,73.8906 76.5719,73.7031 Q76.2438,73.3281 75.6344,73.1094 Q75.025,72.8906 74.4,72.8906 Q73.6344,72.8906 73.0016,73.2188 Q72.3688,73.5469 71.8766,74.2969 Q71.3844,75.0469 71.3844,76.0781 L71.3844,77.1719 Q71.3844,78.4063 72.275,79.2266 Q73.1656,80.0469 74.7594,80.0469 Q75.6969,80.0469 76.3531,79.7969 Q76.7438,79.6406 77.1656,79.2031 Q77.4313,78.9375 77.5797,78.8594 Q77.7281,78.7813 77.9313,78.7813 Q78.2594,78.7813 78.5172,79.0391 Q78.775,79.2969 78.775,79.6406 Q78.775,79.9844 78.4313,80.3906 Q77.9313,80.9688 77.1344,81.2969 Q76.0563,81.75 74.7594,81.75 Q73.2438,81.75 72.0406,81.125 Q71.0563,80.625 70.3688,79.5547 Q69.6813,78.4844 69.6813,77.2031 L69.6813,76.0469 Q69.6813,74.7188 70.2984,73.5703 Q70.9156,72.4219 72.0094,71.8047 Q73.1031,71.1875 74.3375,71.1875 Q75.0719,71.1875 75.7203,71.3516 Q76.3688,71.5156 76.9156,71.875 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="37" x="92.85" y="80.9102">Aircraft</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="153" y1="92" y2="92"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="153" y1="100" y2="100"/><ellipse cx="49" cy="112.418" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="90" x="58" y="115.4189">Aircraft(String, int)</text><ellipse cx="49" cy="126.2539" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="58" y="129.2549">Aircraft(Aircraft)</text><ellipse cx="49" cy="140.0898" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="58" y="143.0908">getCapactiy(): int</text><!--
+@startuml
+
+    namespace FMS.provided {
+        class Aircraft {
+            +Aircraft(String, int)
+            +Aircraft(Aircraft)
+            +getCapactiy(): int
+        }
+    }
+
+@enduml
+
+PlantUML version 1.2018.05(Sat May 05 22:00:17 CEST 2018)
+(APACHE source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 10.0.1+10
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: Cp1252
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="libs/guava-base-r03.jar"/>
+	<classpathentry kind="lib" path="libs/guava-collections-r03.jar"/>
+	<classpathentry kind="lib" path="libs/jcommander.jar"/>
+	<classpathentry kind="lib" path="libs/snakeyaml.jar"/>
+	<classpathentry kind="lib" path="libs/support.jar"/>
+	<classpathentry kind="lib" path="libs/testng-remote.jar"/>
+	<classpathentry kind="lib" path="libs/testng-sources.jar"/>
+	<classpathentry kind="lib" path="libs/testng.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
