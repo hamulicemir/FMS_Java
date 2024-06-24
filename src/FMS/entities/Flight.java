@@ -1,5 +1,6 @@
 package FMS.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -35,15 +36,17 @@ public abstract class Flight implements Comparable<Flight> {
 
 	public Flight(Flight f){
 		this.arrival = new DateTime(arrival);
-		this.crew = f.crew;
+		this.crew = new HashSet<>(f.crew);
 		this.departure = new DateTime(f.departure);
 		this.destination = f.destination;
 		this.flightID = f.flightID;
 		this.origin = f.origin;
-		this.passengers = f.passengers;
+		this.passengers = new HashSet<>(f.passengers);
 		this.vessel = f.vessel;
 	}
 	public Flight(String flightID, String origin, String destination, DateTime departure, DateTime arrival) {
+		this.crew = new HashSet<>();
+		this.passengers = new HashSet<>();
 		setFlightID(flightID);
 		setOrigin(origin);
 		setDestination(destination);
@@ -90,16 +93,20 @@ public abstract class Flight implements Comparable<Flight> {
 		//return Integer.compare(Integer.parseInt(this.flightID), Integer.parseInt(f.flightID));
 	}
 	public boolean add(Staff staff){
-		if(staff != null && !this.crew.contains(staff)){
-			crew.add(staff);
-			return true;
+		if(staff != null){
+			if(!this.crew.contains(staff)){
+				crew.add(staff);
+				return true;
+			}
 		}
 		return false;
 	}
 	public boolean add(Passenger passenger){
-		if(!this.passengers.contains(passenger) && (passenger != null) && ((vessel.getCapactiy() > passengers.size()))){
-			passengers.add(passenger);
-			return true;
+		if(this.vessel != null){
+			if(!this.passengers.contains(passenger) && (passenger != null) && ((vessel.getCapactiy() > passengers.size()))){
+				passengers.add(passenger);
+				return true;
+			}
 		}
 		return false;
 	}

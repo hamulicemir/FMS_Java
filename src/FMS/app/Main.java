@@ -1,9 +1,11 @@
 package FMS.app;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Predicate;
 
 import FMS.entities.*;
 import FMS.provided.*;
@@ -18,8 +20,8 @@ public class Main {
 	 * Demo application.
 	 * 
 	 * <ul>
-	 * <li>creates demo flights using {@link init}</li>
-	 * <li>prints them using {@link print}</li>
+	 * <li>creates demo flights using {@link }</li>
+	 * <li>prints them using {@link }</li>
 	 * <li>sorts them by flight id</li>
 	 * <li>prints them again</li>
 	 * <li>filters flights, keeping those originating from Vienna (VIE)</li>
@@ -37,6 +39,24 @@ public class Main {
 		List<Flight> flights = init();
 		//2.
 		print(flights);
+		//3.
+		List<Flight> sortedflights = flights.stream()
+				.sorted()
+				.toList();
+		//4.
+		print(sortedflights);
+		//5.
+		List<Flight> ViennaFlights = filter(flights, new OriginMatcher("VIE"));
+		print(ViennaFlights);
+		//6.
+		List<Flight> SortedViennaFlights = ViennaFlights.stream()
+				.sorted(new DepartureComparator())
+				.toList();
+		//7.
+		print(SortedViennaFlights);
+		//8.
+		System.out.println("Exporting all flights from VIE sorted by Date.");
+		System.out.println("Exported " + export(SortedViennaFlights, "departures_VIE.txt") + " files.");
 	}
 
 	/**
@@ -52,6 +72,29 @@ public class Main {
 			System.out.println(f + "\n");
 		System.out.printf("--- %d flights listed\n\n", flights.size());
 
+	}
+	public static int export(List<Flight> flights, String filename) {
+		int counter = 0;
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename))){
+			bw.write("--- Listing Flights\n");
+			for(Flight f : flights){
+				bw.write(f.toString());
+				bw.newLine();
+				counter++;
+			}
+		}
+		catch (Exception e){
+			System.err.println(e.getMessage());
+		}
+		return counter;
+	}
+	public static <T> List<T> filter(List<T> list, Matcher<T> mtch) {
+		List<T> filteredList = new LinkedList<>();
+		for (T t : list) {
+			if(mtch.match(t))
+				filteredList.add(t);
+		}
+		return filteredList;
 	}
 
 	/**
